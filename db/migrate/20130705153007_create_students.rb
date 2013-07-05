@@ -1,13 +1,13 @@
 class CreateStudents < ActiveRecord::Migration
   def change
     create_table :students do |t|
-      t.text :name
-      t.text :tagline
+      t.string :name
+      t.string :tagline
       t.text :bio
-      t.text :treehouse_profile
-      t.text :linkedin
-      t.text :twitter
-      t.text :github
+      t.string :treehouse_profile
+      t.string :linkedin
+      t.string :twitter
+      t.string :github
       t.text :quote
 
       t.timestamps
