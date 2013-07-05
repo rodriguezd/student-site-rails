@@ -1,4 +1,4 @@
-<h1>Listing students</h1>
+<!-- <h1>Listing students</h1>
 
 <table>
   <tr>
@@ -15,23 +15,47 @@
     <th></th>
   </tr>
 
-<% @students.each do |student| %>
+<%# @students.each do |student| %>
   <tr>
-    <td><%= student.name %></td>
-    <td><%= student.tagline %></td>
-    <td><%= student.bio %></td>
-    <td><%= student.treehouse_profile %></td>
-    <td><%= student.linkedin %></td>
-    <td><%= student.twitter %></td>
-    <td><%= student.github %></td>
-    <td><%= student.quote %></td>
-    <td><%= link_to 'Show', student %></td>
-    <td><%= link_to 'Edit', edit_student_path(student) %></td>
-    <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%#= student.name %></td>
+    <td><%#= student.tagline %></td>
+    <td><%#= student.bio %></td>
+    <td><%#= student.treehouse_profile %></td>
+    <td><%#= student.linkedin %></td>
+    <td><%#= student.twitter %></td>
+    <td><%#= student.github %></td>
+    <td><%#= student.quote %></td>
+    <td><%#= link_to 'Show', student %></td>
+    <td><%#= link_to 'Edit', edit_student_path(student) %></td>
+    <td><%#= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
-<% end %>
+<%# end %>
 </table>
 
 <br />
 
-<%= link_to 'New Student', new_student_path %>
+<%#= link_to 'New Student', new_student_path %> -->
+
+<ul>
+    <% @students.each do |student| %>
+      <li class="home-blog-post">
+                <div class="blog-thumb">
+                  <%= link_to(image_tag("/img/"+student.id.to_s+".jpg", :width => 360, :height => 140, :class => "attachment-blog-thumb wp-post-image", :alt => ""), student) %>
+                </div>
+
+                <div class="blog-title">
+                  <div class="big-comment"><h3><%= link_to student.name, student %>
+                 </a></h3></div>
+                  <!-- <p class="home-blog-post-meta"><%= student.tagline %></p> -->
+                </div>
+                <div class="clear"></div>
+
+                <div class="excerpt">
+                  <p><%= student.bio %></p>
+                </div>
+                <div class="clear"></div>
+              </li>
+    <% end %>
+  </ul>
+
+  <p><%= link_to 'New Student', new_student_path %></p>

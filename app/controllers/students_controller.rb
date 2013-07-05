@@ -14,11 +14,12 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     @student = Student.find(params[:id])
+    render :layout => 'show_layout.html.erb'
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @student }
-    end
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @student }
+    # end
   end
 
   # GET /students/new
