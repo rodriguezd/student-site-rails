@@ -35,6 +35,7 @@
 <br />
 
 <%#= link_to 'New Student', new_student_path %> -->
+<span><%= link_to 'New Student', new_student_path %></span>
 
 <ul>
     <% @students.each do |student| %>
@@ -51,11 +52,9 @@
                 <div class="clear"></div>
 
                 <div class="excerpt">
-                  <p><%= student.bio %></p>
+                  <p><%= student.tagline %></p>
                 </div>
                 <div class="clear"></div>
               </li>
     <% end %>
   </ul>
-
-  <p><%= link_to 'New Student', new_student_path %></p>

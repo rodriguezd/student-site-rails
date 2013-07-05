@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+
+  layout :resolve_layout
+
   # GET /students
   # GET /students.json
   def index
@@ -14,12 +17,11 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     @student = Student.find(params[:id])
-    render :layout => 'show_layout.html.erb'
 
-    # respond_to do |format|
-    #   format.html # show.html.erb
-    #   format.json { render json: @student }
-    # end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @student }
+    end
   end
 
   # GET /students/new
@@ -79,6 +81,19 @@ class StudentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to students_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def resolve_layout
+    case action_name
+    when 'show'
+      'show_layout'
+    when 'edit', 'new'
+      'basic_layout'
+    else
+      'application'
     end
   end
 end
