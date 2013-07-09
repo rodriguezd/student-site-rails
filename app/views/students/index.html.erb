@@ -6,7 +6,8 @@
     <% @students.each do |student| %>
       <li class="home-blog-post">
                 <div class="blog-thumb">
-                  <%= link_to(image_tag("/img/"+student.id.to_s+".jpg", :width => 360, :height => 140, :class => "attachment-blog-thumb wp-post-image", :alt => ""), student) %>
+                  <%= link_to(image_tag(student.id.to_s + ".jpg", :width => 360, :height => 140, :class => "attachment-blog-thumb wp-post-image", :alt => ""), student) %>
+                  <%#= image_tag "1.jpg" %>
                 </div>
 
                 <div class="blog-title">

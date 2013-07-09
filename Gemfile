@@ -23,6 +23,8 @@ end
 gem 'jquery-rails'
 
 gem 'nokogiri'
+gem 'omniauth-github'
+gem 'omniauth-openid'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

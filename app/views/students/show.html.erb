@@ -47,7 +47,7 @@
 
       <div class="link-subs">
         <span>
-          <img src="../img/student-icons/swiss-army-knife.png" style="width: 16px;" /> <%= @student.name %> | <%= link_to 'Edit', edit_student_path(@student) %> | <%= link_to 'Index', students_path %></span>
+          <img src="/img/student-icons/swiss-army-knife.png" style="width: 16px;" /> <%= @student.name %> | <%= link_to 'Edit', edit_student_path(@student) %> | <%= link_to 'Index', students_path %></span>
 
         <ul>
           <li><a href="#scroll-about">About</a></li>
@@ -68,7 +68,8 @@
       <!-- Begin Splash Image -->
       <div class="top-page-title">
         <div>
-          <img src="../img/<%=@student.id%>.jpg" class="student_pic">
+          <%= image_tag @student.id.to_s + ".jpg", class: "student_pic" %>
+          <!-- <img src="/img/<%#=@student.id%>.jpg" class="student_pic"> -->
         </div>
       </div>
       <! -- End Splash Image -->
